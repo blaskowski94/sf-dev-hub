@@ -1,0 +1,17 @@
+<aura:component>
+    <aura:attribute name="newItem" type="Camping_Item__c"
+        default="{'sobjectType': 'Camping_Item__c', 'Quantity__c': 0, 'Price__c': 0}" />
+    <aura:registerEvent name="addItem" type="c:addItemEvent" />
+
+    <form>
+        <lightning:input aura:id="campingForm" label="Name" name="name" value="{!v.newItem.Name}" />
+        <lightning:input type="number" aura:id="campingForm" label="Quantity" name="campingQuantity" min="1" step="1"
+            value="{!v.newItem.Quantity__c}" messageWhenRangeUnderflow="Enter an integer number >= 1" />
+        <lightning:input type="number" aura:id="campingForm" label="Price" name="campingPrice" min="0.01"
+            formatter="currency" step="0.01" value="{!v.newItem.Price__c}"
+            messageWhenRangeUnderflow="Enter an amount that's at least $0.01." />
+        <lightning:input type="checkbox" aura:id="campingForm" label="Packed?" name="campingPacked"
+            checked="{!v.newItem.Packed__c}" />
+        <lightning:button label="Create Item" onclick="{!c.clickCreateItem}" />
+    </form>
+</aura:component>
