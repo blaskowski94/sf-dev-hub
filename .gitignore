@@ -27,3 +27,6 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+
+# annoying file
+force-app/main/default/lwc/jsconfig.json

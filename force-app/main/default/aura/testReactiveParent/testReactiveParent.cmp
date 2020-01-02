@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+  <aura:attribute name="name" type="string" default="bob" />
+  <lightning:button onclick="{!c.updateName}">Click me</lightning:button>
+  Hello World
+  <c:testReactiveChild passedName="{!v.name}"></c:testReactiveChild>
+</aura:component>
